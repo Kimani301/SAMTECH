@@ -1,0 +1,26 @@
+{
+  "name": "samtech-electronics",
+  "version": "1.0.0",
+  "description": "SAMTECH ELECTRONICS shop management app",
+  "author": "SAMTECH ELECTRONICS",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis portable --publish never"
+  },
+  "devDependencies": {
+    "@capacitor/android": "^6.1.2",
+    "@capacitor/cli": "^6.1.2",
+    "@capacitor/core": "^6.1.2",
+    "electron": "^31.7.7",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.samtech.electronics",
+    "productName": "SAMTECH ELECTRONICS",
+    "files": ["index.html", "main.js", "icon-512.png", "icon-192.png"],
+    "directories": {"output": "dist"},
+    "win": {"target": ["nsis", "portable"], "icon": "icon-512.png"},
+    "nsis": {"oneClick": false, "allowToChangeInstallationDirectory": true, "createDesktopShortcut": true}
+  }
+}
